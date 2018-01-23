@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 1</title>
+    <title>Level 2</title>
      <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         #col1row1 {
@@ -37,10 +37,10 @@
 
         // colored boxes in the game board to be linked together; make objects to hold state data
         gameboxes = [
-            make_div_obj('col1row1', ['rgb(255, 0, 0)'], ['col2row2']),
-            make_div_obj('col2row1', ['rgb(255, 0, 0)'], ['col1row1']),
-            make_div_obj('col1row2', ['rgb(255, 0, 0)'], ['col2row1']),
-            make_div_obj('col2row2', ['rgb(255, 0, 0)'], ['col1row2'])
+            make_div_obj('col1row1', ['rgb(255, 0, 0)', 'rgb(255,165,0)'], ['col2row2']),
+            make_div_obj('col2row1', ['rgb(255, 0, 0)', 'rgb(255,165,0)'], ['col1row1']),
+            make_div_obj('col1row2', ['rgb(255, 0, 0)', 'rgb(255,165,0)'], ['col2row1']),
+            make_div_obj('col2row2', ['rgb(255,165,0)', 'rgb(255, 0, 0)'], ['col1row2'])
         ];
         set_event_listeners(gameboxes, win_color);
     </script>
