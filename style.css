@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 40% 40%;
     grid-gap: 10%;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .gamebox {
@@ -10,4 +10,5 @@
     border-radius: 5px;
     padding: 20px;
     color: #fff;
+    margin-bottom: 10px;
 }
