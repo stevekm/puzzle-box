@@ -1,7 +1,8 @@
 .gameboard{
     display: grid;
-    grid-template-columns: 100px 100px;
-    grid-gap: 10px;
+    grid-template-columns: 40% 40%;
+    grid-gap: 10%;
+    max-width: 400px;
 }
 
 .gamebox {
