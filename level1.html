@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        #col1row1 {
+            background-color: blue;
+        }
+
+        #col2row1{
+            background-color: blue;
+        }
+
+        #col1row2{
+            background-color: blue;
+        }
+
+        #col2row2{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Challenge: Turn all the boxes red
+</h1>
+<div id="gameboard" class="gameboard">
+    <div id="col1row1" class="gamebox" class="col1" class="row1"></div>
+    <div id="col2row1" class="gamebox" class="col2" class="row1"></div>
+    <div id="col1row2" class="gamebox" class="col1" class="row2"></div>
+    <div id="col2row2" class="gamebox" class="col2" class="row2"></div>
+</div>
+
+<script src="game.js"></script>
+<script>
+    let win_color = {name: 'red', code: "rgb(255, 0, 0)"}
+
+    // colored boxes in the game board to be linked together; make objects to hold state data
+    gameboxes = [
+        make_div_obj('col1row1', ['rgb(255, 0, 0)'], ['col2row2']),
+        make_div_obj('col2row1', ['rgb(255, 0, 0)'], ['col1row1']),
+        make_div_obj('col1row2', ['rgb(255, 0, 0)'], ['col2row1']),
+        make_div_obj('col2row2', ['rgb(255, 0, 0)'], ['col1row2'])
+    ];
+    set_event_listeners(gameboxes, win_color);
+</script>
+</body>
+</html>
