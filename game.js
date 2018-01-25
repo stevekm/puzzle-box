@@ -116,16 +116,12 @@ function set_event_listeners(gameboxes, win_color){
         box_obj.element.addEventListener("click", (event) => {
             console.log(box_obj.id + ' was clicked');
             let current_colors = get_current_cols(gameboxes);
-            console.log('current colors:');
-            console.log(current_colors);
 
             cycle_cols(box_obj);
             let linked_objs = get_linked_objs(box_obj, gameboxes);
             cycle_all_cols(linked_objs);
 
             current_colors = get_current_cols(gameboxes);
-            console.log('new colors:');
-            console.log(current_colors);
             check_win(gameboxes, win_color);
         });
     };
