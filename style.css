@@ -1,14 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    height: 5vh
+}
 .gameboard{
     display: grid;
-    grid-template-columns: 40% 40%;
-    grid-gap: 10%;
-    max-width: 600px;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-gap: 1%;
+    height: 90vw;
+    width: 100vw;
 }
 
 .gamebox {
-    background-color: #444;
+    background-color: blue;
     border-radius: 5px;
     padding: 20px;
     color: #fff;
     margin-bottom: 10px;
+}
+
+@media all and (orientation: landscape) {
+    .gameboard{
+        height: 85vh;
+        width: 95vh;
+    }
+
 }
