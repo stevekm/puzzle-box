@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 4</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    .gameboard{
+        grid-template-columns: 25% 25% 25%;
+    }
+
+    .gamebox {
+        background-color: blue;
+        border-radius: 5px;
+        padding: 20px;
+        color: #fff;
+    }
+
+    </style>
+</head>
+<body>
+    <h2>Challenge: Turn all the boxes <span style="color:rgb(255, 0, 0)">red</span></h2>
+    <div id="gameboard" class="gameboard">
+        <div id="col1row1" class="gamebox" class="col1" class="row1"></div>
+        <div id="col2row1" class="gamebox" class="col2" class="row1"></div>
+        <div id="col3row1" class="gamebox" class="col3" class="row1"></div>
+
+        <div id="col1row2" class="gamebox" class="col1" class="row2"></div>
+        <div id="col2row2" class="gamebox" class="col2" class="row2"></div>
+        <div id="col3row2" class="gamebox" class="col3" class="row2"></div>
+
+        <div id="col1row3" class="gamebox" class="col1" class="row3"></div>
+        <div id="col2row3" class="gamebox" class="col2" class="row3"></div>
+        <div id="col3row3" class="gamebox" class="col3" class="row3"></div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        let win_color = {name: 'red', code: "rgb(255, 0, 0)"}
+
+        // colored boxes in the game board to be linked together; make objects to hold state data
+        gameboxes = [
+            make_div_obj('col1row1', ['rgb(255,165,0)',
+                                      'rgb(255, 0, 0)',
+                                      'rgb(255, 100, 0)'],
+                                      ['col3row3', 'col1row2']),
+            make_div_obj('col2row1', ['rgb(255, 0, 0)'], ['col1row1']),
+            make_div_obj('col3row1', ['rgb(255, 0, 0)'], ['col2row3']),
+
+            make_div_obj('col1row2', ['rgb(0, 100, 40)',
+                                       'rgb(255,165,0)',
+                                       'rgb(255, 0, 0)'],
+                                       ['col3row1']),
+            make_div_obj('col2row2', ['rgb(255,165,0)',
+                                     'rgb(255, 0, 0)'],
+                                     ['col1row2']),
+            make_div_obj('col3row2', ['rgb(255, 0, 0)',
+                                        'rgb(0, 0, 255)',
+                                        'rgb(255, 0, 0)',
+                                        'rgb(0, 100, 40)'],
+                                        ['col2row2', 'col3row1']),
+
+            make_div_obj('col1row3', ['rgb(255, 0, 0)', 'rgb(255,165,0)'], ['col3row2']),
+            make_div_obj('col2row3', ['rgb(255, 0, 0)', 'rgb(0, 100, 40)'], ['col1row3']),
+            make_div_obj('col3row3', ['rgb(255, 0, 0)'], ['col1row2', 'col3row2', 'col1row3'])
+        ];
+        set_event_listeners(gameboxes, win_color);
+    </script>
+    <div style="font-size:1em;padding:10px">
+        <a href="index.html">[Level Select]</a>
+    </div>
+</body>
+</html>
